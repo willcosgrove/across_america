@@ -6,15 +6,81 @@ body {
   background: #454545;
 }
 
+#container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #title {
   width: 960px;
   height: 200px;
   font-family: calluna;
 }
 
+#title h2 {
+    font-size: 93px;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+#title h1 {
+    font-size: 140px;
+    padding-top: 0;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#title h1 span {
+    font-size: 10px;
+    color: #666;
+}
+
 #donation_bar {
-  width: 940px;
-  height: 100px;
+  width: 960px;
+  height: 200px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+
+article header {
+  font-family: calluna;
+  font-size: 100px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px solid #353535;
+}
+
+article p {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: calluna;
+  font-size: 18pt;
+  line-height: 1.5em;
+  text-align: justify;
+  color: #fff;
+}
+
+article header + * {
+  border-top: 1px solid #555;
+  margin-top: 0px;
+  padding-top: 40px;
+}
+
+dl {
+  font-family: calluna;
+  line-height: 1.5em;
+  color: #fff;
+}
+
+dt {
+  font-size: 24pt;
+}
+
+dd {
+  font-size: 18pt;
+  margin-bottom: 10px;
 }
