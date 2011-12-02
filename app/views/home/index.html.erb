@@ -4,6 +4,35 @@
 </div>
 <%= content_tag(:div, nil, :id => 'donation_bar', :data => {donated: @donated, donated_formatted: number_to_currency(@donated, precision: 0)}) %>
 
+<%= form_for @donation do |f| %>
+  <%= f.hidden_field :stripe_card_token %>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder:  "optional" %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "optional" %>
+  <%= f.label :note %>
+  <%= f.text_area :note, placeholder: "leave us a note if you want to", cols: 39, rows: 5 %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount, placeholder: "in USD" %>
+  <%= label_tag :card_number, "Credit Card Number" %>
+  <%= text_field_tag :card_number, nil, name: nil %>
+  <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+  <%= text_field_tag :card_code, nil, name: nil, placeholder: "the thingy on the back" %>
+  <%= label_tag :card_month, "Card Expiration" %>
+  <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+  <br />
+  <%= f.submit "Donate", class: "btn primary"%>
+  <div id="stripe_error">
+    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+<% end %>
+
+<div id="donate_now_tab">
+  <span>Donate Now</span>
+  <span style="display:none">Close</span>
+</div>
+
 <article id="what_we_are_doing">
   <header>What We're Doing</header>
   <p>Thomas and I are going across America to see the beautiful country we live in.  Along the way we'll be photographing, videoing, and just generally chronicling our journey, which you will be able to keep up with on this site!  There will be a live location tracker, blog posts, photos, and videos.  I'm sure they'll all be priceless.  But if you had to assign a price to it... you could donate that to our trip!  As it turns out, a month long road trip isn't cheap.  That's where you come in.</p>

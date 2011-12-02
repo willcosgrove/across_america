@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require raphael-min
 //= require home
+//= require donations
 //= require_self

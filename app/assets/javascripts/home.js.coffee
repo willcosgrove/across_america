@@ -33,3 +33,8 @@ class root.DonationBar
 
 jQuery ->
   donation_bar = new DonationBar($("#donation_bar").data("donated"))
+  $("#donate_now_tab").click ->
+    $('#new_donation').slideToggle()
+    $('#donate_now_tab span').toggle()
+  $('.alert-message close').click =>
+    $(self).parent.fadeOut()
