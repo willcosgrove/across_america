@@ -6,6 +6,12 @@ body {
   background: #454545;
 }
 
+#donate_flag {
+  position: fixed;
+  left: 0px;
+  top: 300px;
+}
+
 #container {
   width: 960px;
   margin-left: auto;
@@ -22,10 +28,14 @@ body {
     font-size: 93px;
     margin-bottom: 0;
     color: #ffffff;
+    width: 100%;
+    text-align: center;
 }
 
 #title h1 {
     font-size: 140px;
+    width: 100%;
+    text-align: center;
     padding-top: 0;
     margin-top: -30px;
     margin-bottom: 20px;
@@ -62,6 +72,14 @@ article p {
   line-height: 1.5em;
   text-align: justify;
   color: #fff;
+}
+
+article a {
+  color: #aaa;
+  text-decoration: none;
+  &:hover {
+    color: #ccc;
+  }
 }
 
 article header + * {

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-    @donated = 3000
+    @donated = 0
   end
   
 end

@@ -9,7 +9,7 @@ class root.DonationBar
     @total = 5000
     @paper = Raphael('donation_bar', 960, 200)
     @barBG = @paper.rect(10,10,940,100,50)
-    @barBG.attr({'fill': '#ddd', 'stroke-width': 0})
+    @barBG.attr({'fill': '#333', 'stroke-width': 0})
     @bar = @paper.rect(10,10,100,100,50)
     @bar.attr({ 'stroke-width': 0, 'fill': "url('/assets/bar_pattern.png')", 'fill-opacity': 1.0})
     text_x = (@donated/@total)*470
@@ -21,7 +21,10 @@ class root.DonationBar
     @growBar()
 
   growBar: ->
-    anim = Raphael.animation({'width': (@donated/@total)*940}, 500)
+    bar_width = (@donated/@total)*940
+    if bar_width < 100
+      bar_width = 100
+    anim = Raphael.animation({'width': bar_width}, 500)
     @bar.animate(anim.delay(10))
 
   addMoney: (money) ->
