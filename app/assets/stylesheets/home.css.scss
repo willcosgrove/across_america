@@ -6,6 +6,16 @@ body {
   background: #454545;
 }
 
+a {
+  text-decoration: none;
+}
+
+.alert-message p {
+  font-family: dejarip, sans-serif;
+  font-weight: 700;
+  margin: 5px;
+}
+
 #donate_flag {
   position: fixed;
   left: 0px;
@@ -59,6 +69,7 @@ body {
 #new_donation {
   width: 500px;
   background-color: #d8e5da;
+  opacity: 0.95;
   position: relative;
   left: 50%;
   display: none;

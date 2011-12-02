@@ -36,5 +36,4 @@ jQuery ->
   $("#donate_now_tab").click ->
     $('#new_donation').slideToggle()
     $('#donate_now_tab span').toggle()
-  $('.alert-message close').click =>
-    $(self).parent.fadeOut()
+  $('.alert-message').alert()

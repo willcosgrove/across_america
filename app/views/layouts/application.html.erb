@@ -12,9 +12,9 @@
 <body>
   <div id="container">
     <% unless flash.empty? %>
-      <div class="alert-message success">
+      <div id="success" class="alert-message success fade in" data-alert="alert">
         <a class="close" href="#">×</a>
-        <p>Your donation was placed successfully.  Thank you <strong>so much!</strong></p>
+        <p><%= flash[:success] %></p>
       </div>
     <% end%>
     <%= yield %>

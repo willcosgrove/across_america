@@ -44,7 +44,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save_with_payment
-        format.html { redirect_to :root, notice: 'Donation was successfully created.' }
+        format.html { redirect_to :root, success: 'Your donation was made successfully, thank you so much!' }
         format.json { render json: @donation, status: :created, location: @donation }
       else
         format.html { render action: "new" }
