@@ -13,10 +13,15 @@ class root.DonationBar
     @bar = @paper.rect(10,10,100,100,50)
     @bar.attr({ 'stroke-width': 0, 'fill': "url('/assets/bar_pattern.png')", 'fill-opacity': 1.0})
     text_x = (@donated/@total)*470
+    text_y = 140
+    conditional_attributes = {}
     if text_x < 70
       text_x = 70
-    @donatedText = @paper.text(text_x,140,$("#donation_bar").data("donated-formatted"))
-    @donatedText.attr({'font-family': 'calluna', 'fill': '#fff', 'font-size': 72})
+    if text_x >= 312
+      text_y = 50
+      conditional_attributes = {'font-weight': 'bold'}
+    @donatedText = @paper.text(text_x,text_y,$("#donation_bar").data("donated-formatted"))
+    @donatedText.attr($.extend({'font-family': 'calluna', 'fill': '#fff', 'font-size': 72},conditional_attributes))
     
     @growBar()
 

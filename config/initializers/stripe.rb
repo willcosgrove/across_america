@@ -1,2 +1,5 @@
-Stripe.api_key = "5sNqcpw5g5jfPvZRq9110Cac7P1IYVna"
-STRIPE_PUBLIC_KEY = "pk_QgCjfMsK5iEuvjZyth0UYdjHPcYXA"
+ENV["STRIPE_API_KEY"] ||= "5sNqcpw5g5jfPvZRq9110Cac7P1IYVna"
+ENV["STRIPE_PUBLIC_KEY"] ||= "pk_QgCjfMsK5iEuvjZyth0UYdjHPcYXA"
+
+Stripe.api_key = ENV["STRIPE_API_KEY"]
+STRIPE_PUBLIC_KEY = ENV["STRIPE_PUBLIC_KEY"]

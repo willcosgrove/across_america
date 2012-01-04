@@ -1,6 +1,14 @@
 class Donation < ActiveRecord::Base
   attr_accessor :stripe_card_token, :amount
   
+  def value
+    value_in_pennies/100.0
+  end
+  
+  def value=(val)
+    value_in_pennies = val*100
+  end
+  
   def save_with_payment
     # binding.pry
     self.value_in_pennies = (amount.to_i * 100)
